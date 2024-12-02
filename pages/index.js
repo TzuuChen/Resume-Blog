@@ -1,10 +1,23 @@
-import "./App.css";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
+import { PiListBold } from "react-icons/pi";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
 
 function App() {
+	const [anchorEl, setAnchorEl] = useState(null);
+	const open = anchorEl;
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 	return (
 		<div className="">
 			<header className="header">
@@ -13,10 +26,39 @@ function App() {
 						<h3>陳姿卉</h3>
 						<p>／前端工程師</p>
 					</div>
+					<div className="d-flex d-md-none">
+						<Button
+							id="fade-button"
+							aria-controls={open ? "fade-menu" : undefined}
+							aria-haspopup="true"
+							aria-expanded={open ? "true" : undefined}
+							onClick={handleClick}>
+							<PiListBold size={24} color="white" />
+						</Button>
+						<Menu
+							id="fade-menu"
+							MenuListProps={{
+								"aria-labelledby": "fade-button",
+							}}
+							anchorEl={anchorEl}
+							open={open}
+							onClose={handleClose}
+							TransitionComponent={Fade}>
+							<MenuItem onClick={handleClose}>Home</MenuItem>
+							<MenuItem onClick={handleClose}>Blog</MenuItem>
+							<MenuItem onClick={handleClose}>Project</MenuItem>
+						</Menu>
+					</div>
 					<nav className="d-flex gap-3 d-none d-md-flex">
-						<div>Home</div>
-						<div>Blog</div>
-						<div>Project</div>
+						<div>
+							<a href="/">Home</a>
+						</div>
+						<div>
+							<a href="/blog">Blog</a>
+						</div>
+						<div>
+							<a href="/project">Project</a>
+						</div>
 					</nav>
 				</div>
 			</header>
@@ -51,10 +93,10 @@ function App() {
 					</div>
 				</div>
 			</div>
-			<footer className="d-flex d-none d-md-flex">
+			<footer className="d-flex">
 				<div className="container">
 					<div>Contact Me</div>
-					<div className="d-flex justify-content-center gap-3">
+					<div className="d-flex justify-content-center gap-3 flex-wrap">
 						<div>
 							<IoIosMail size={25} />
 							jf76501@gmail.com

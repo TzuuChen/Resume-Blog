@@ -6,7 +6,7 @@
 header {
 	background-color: rgb(103, 103, 180);
 	color: white;
-	height: 8dvh;
+	height: 8vh;
 	align-content: center;
 }
 
@@ -27,8 +27,9 @@ header {
 	height: 30px;
 	margin-right: 5px;
 }
+
 .content {
-	height: 85dvh;
+	height: 85vh;
 }
 
 .content-left {
@@ -37,11 +38,7 @@ header {
 	width: 40%;
 	background-color: rgb(186, 186, 214);
 }
-.content-right {
-	height: 100%;
-	width: 60%;
-	align-content: center;
-}
+
 .content-card {
 	position: absolute;
 	top: 25%;
@@ -85,8 +82,19 @@ header {
 	border-radius: 50%;
 	background: no-repeat bottom/cover url("../public/photo/avatar.jpg");
 }
+
+.content-right {
+	height: 100%;
+	width: 60%;
+	align-content: center;
+}
 .content-text {
 	max-width: 600px;
 	line-height: 4vh;
 	margin-left: 10%;
+}
+@media (max-width: 500px) {
+	.content {
+		height: auto;
+	}
 }
