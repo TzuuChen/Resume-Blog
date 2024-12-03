@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../component/header";
 
 function Blog() {
-	return <div>Hi Here is blog</div>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 }
 
 export default Blog;

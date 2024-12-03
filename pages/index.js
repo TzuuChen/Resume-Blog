@@ -1,67 +1,13 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import { PiListBold } from "react-icons/pi";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
+import Header from "../component/header";
 
 function App() {
-	const [anchorEl, setAnchorEl] = useState(null);
-	const open = anchorEl;
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
 	return (
 		<div className="">
-			<header className="header">
-				<div className="container d-flex justify-content-between align-items-center">
-					<div className="title d-flex align-items-center">
-						<h3>陳姿卉</h3>
-						<p>／前端工程師</p>
-					</div>
-					<div className="d-flex d-md-none">
-						<Button
-							id="fade-button"
-							aria-controls={open ? "fade-menu" : undefined}
-							aria-haspopup="true"
-							aria-expanded={open ? "true" : undefined}
-							onClick={handleClick}>
-							<PiListBold size={24} color="white" />
-						</Button>
-						<Menu
-							id="fade-menu"
-							MenuListProps={{
-								"aria-labelledby": "fade-button",
-							}}
-							anchorEl={anchorEl}
-							open={open}
-							onClose={handleClose}
-							TransitionComponent={Fade}>
-							<MenuItem onClick={handleClose}>Home</MenuItem>
-							<MenuItem onClick={handleClose}>Blog</MenuItem>
-							<MenuItem onClick={handleClose}>Project</MenuItem>
-						</Menu>
-					</div>
-					<nav className="d-flex gap-3 d-none d-md-flex">
-						<div>
-							<a href="/">Home</a>
-						</div>
-						<div>
-							<a href="/blog">Blog</a>
-						</div>
-						<div>
-							<a href="/project">Project</a>
-						</div>
-					</nav>
-				</div>
-			</header>
+			<Header />
 			<div>
 				<div className="content-photo-mb d-flex d-md-none"></div>
 				<div className="content d-flex justify-content-center align-items-center">
