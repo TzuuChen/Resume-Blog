@@ -9,6 +9,10 @@ header {
 	height: 8vh;
 	align-content: center;
 }
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
 
 .title {
 	h3 {
@@ -90,7 +94,7 @@ header {
 }
 .content-text {
 	max-width: 600px;
-	line-height: 4vh;
+	line-height: 1.5rem;
 	margin-left: 10%;
 }
 @media (max-width: 500px) {
@@ -101,4 +105,28 @@ header {
 .link {
 	text-decoration: none;
 	color: white;
+	transition: 0.5s;
+	&:hover {
+		color: orange;
+		font-weight: bold;
+		font-size: 18px;
+	}
+}
+
+.article {
+	margin-top: 5px;
+	border: 3px solid gray;
+	border-radius: 25px;
+	box-shadow: 5px 1px 5px black;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.article-content {
+	max-height: 150px; /* 預設收起高度 */
+	overflow: hidden; /* 隱藏超出部分 */
+	transition: 0.5s; /* 加入過渡效果 */
+}
+.article-content.expand {
+	max-height: 1000px; /* 設定展開後的高度，根據需求調整 */
 }
